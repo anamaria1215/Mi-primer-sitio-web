@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Miau, miau, ¿qué hago con mi gatito?</title>
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  		<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+	</head>
+
+	<style>
+	    body {
+	      background-color: pink;
+	      }
+
+	    nav {
+	      background: #d7abff;
+	      width: auto;
+	      height: 40px;
+	      margin: 20px;
+	  	}
+
+	  	#inicio, #Alimentación, #Higiene, #Psicología, #Autor{
+     	 display: none;
+    	}
+
+	  	.nav-item {
+	      float: left;
+	      text-align: center;
+	      list-style: none;
+	    }
+
+	    .nav-link {
+	      color: black;
+	      text-decoration: none;
+	    }
+
+	    .nav-item:hover .nav-link {
+      		color: hotpink;
+    	}
+
+    	.nav-item:active {
+      		background: #9a4fdf; 
+    	}
+
+    	header {
+            background-color: #d7abff;
+            color: black;
+            text-align: center;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin: 20px;
+        }
+
+	    #encabezado {
+	     	font-size: 30px;
+	     	font-style: normal ;
+	     	font-family: serif ;
+	     }
+
+	    #titulo-1-Descripción-del-sitio-web, #titulo-1-Autor {
+
+		    background-color: #dd7d9d;
+	     	color: black;
+	     	font-style: normal ;
+	     	font-family: Helvetica ;
+	     	margin: 20px;
+	     	padding: 10px;
+	    }
+
+	    #lista-descripcion, .parrafo-normal {
+			background-color: #f7b4c0;
+	     	color: black;
+	     	font-size: 1em;
+	     	font-style: normal ;
+	     	text-align: justify;
+	     	font-family: "Times New Roman" ;
+	     	margin: 20px;
+	     	padding: auto;
+	     	width: auto;
+    	 } 
+
+     	#imagen-gato {
+	     	width: 300px;
+	        height: 200px;
+	        filter: saturate(60%) brightness(100%) contrast(100%);
+	        border: 5px solid #d7abff;
+	        margin: 20px;
+	     }
+
+	    #titulo-2-La-alimentación-de-los-gatos, #titulo-2-La-higiene-de-los-gatos, #titulo-2-La-psicología-de-los-gatos {
+
+		    background-color: #ffeb3b;
+	     	color: black;
+	     	font-style: normal ;
+	     	font-family: Helvetica ;
+	     	text-align: center;
+	     	font-size: 1.5em;
+	     	margin: 20px;
+	     	padding: 10px;
+	    }
+
+	    .imagen {
+			width: 200px;
+	        height: 200px;
+	        filter: saturate(60%) brightness(100%) contrast(100%);
+	        border: 3px solid #f7b4c0;
+	        margin: 20px;
+	    }		
+
+	    #subtitulo-1-Tipos-de-alimento, #subtitulo-1-Cómo_elegir_el_mejor_alimento_para_tu_gato, #subtitulo-1-Cepillado-del-pelo, #subtitulo-1-Baño, #subtitulo-1-Limpieza-de-los-ojos, #subtitulo-1-Comportamiento, #subtitulo-1-Emociones, #subtitulo-1-Tipos-de-personalidad-de-los-gatos {
+	    	background-color: #4af8e8;
+	     	color: black;
+	     	font-size: 1.3em;
+	     	font-style: normal ;
+	     	text-align: justify;
+	     	font-family: "Times New Roman" ;
+	     	margin: 20px;
+	     	padding: 10px;
+	    }
+
+	    #subtitulo-2-Pienso-seco, #subtitulo-2-Alimento-húmedo, #subtitulo-2-Pasos-para-bañar-al-gato, #subtitulo-2-Productos-para-limpiar-los-ojos, #subtitulo-2-Pasos-para-limpiar-los-ojos, #subtitulo-2-Ejemplos-de-emociones, #subtitulo-2-Los-cinco-tipos-de-personalidad {
+			background-color: #97f84a;
+	     	color: black;
+	     	font-size: 1.1em;
+	     	font-style: normal ;
+	     	text-align: justify;
+	     	font-family: "Times New Roman" ;
+	     	margin: 20px;
+	     	padding: 10px;
+	    }
+
+	    #pie-pagina {
+			background-color: #d7abff;
+	     	color: black;
+	     	font-style: normal ;
+	     	text-align: center;
+	     	font-family: "Times New Roman" ;
+	     	margin: 20px;
+	     	padding: 10px;
+	    }
+
+	    #imagen-autor {
+			width: 200px;
+	        height: 300px;
+	        filter: saturate(60%) brightness(100%) contrast(100%);
+	        border: 3px solid #f7b4c0;
+	        margin: 20px;
+		}
+
+		.Tabla-contenido-celda {
+	    color: black;
+	    font-size: 1em;
+	    font-style: normal;
+	    font-family: "Times New Roman";
+	    border: 1px;
+	    border-color: lightgray;
+	    border-style: solid;
+	    padding: 5px;
+		}
+
+		table {
+			margin: 20px;
+		}
+
+		.table-striped.custom-table-striped tbody tr:nth-of-type(odd) {
+    		background-color: #f9b54f;
+				}
+
+		.table-striped.custom-table-striped tbody tr:nth-of-type(even) {
+    		background-color: #f7c171;
+	</style>
+
+	<body>
+		<header id="encabezado">Consejos prácticos para tener un felino feliz y saludable</header>
+	  	<nav>
+		    <ul>
+		      <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('inicio')">Inicio</a></li>
+		      <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('Alimentación')">Alimentación</a></li>
+		      <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('Higiene')">Higiene</a></li>
+		      <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('Psicología')">Psicología</a></li>
+		      <li class="nav-item"><a class="nav-link" href="#" onclick="mostrar('Autor')">Autor</a></li>
+		    </ul>
+	  	</nav>
+
+		<!-- Div para el spinner y el mensaje de carga -->
+	    <div id="loader" class="text-center">
+	        <div class="spinner-border text-primary" role="status">
+	            <span class="visually-hidden">Cargando...</span>
+	        </div>
+	        <p>Cargando...</p>
+	    </div>
+
+	    <!-- Contenido de la página (se ocultará temporalmente) -->
+	    <div id="content" style="display: none;"></div>
+
+		<section>
+			<div id="inicio">
+				<article>
+					<h1 id="titulo-1-Descripción-del-sitio-web">Descripción del sitio web</h1>
+						<ul id="lista-descripcion">
+					        <li>¿Tienes un gato o estás pensando en adoptar uno?</li>
+					        <li>¿Quieres saber cómo cuidarlo de la mejor manera posible?</li>
+					        <li>¿Te gustaría aprender más sobre su comportamiento, sus necesidades y sus curiosidades?</li>
+					    </ul>
+						<p class="parrafo-normal">Entonces, este sitio web es para ti.</p>
+						<img src="https://estaticos-cdn.prensaiberica.es/clip/ec13fd86-fe9d-494d-8eb0-0adc433fda3c_16-9-discover-aspect-ratio_default_0.jpg" id="imagen-gato">
+						<p class="parrafo-normal">Si eres un amante de los gatos, es muy seguro que te has preguntado alguna vez cómo cuidar a tu querido compañero de la mejor manera posible. Los gatos son animales fascinantes, pero también tienen sus propias necesidades, preferencias y personalidades. Por eso, es importante conocerlos bien y ofrecerles todo lo que necesitan para ser felices y saludables.</p>
+						<p class="parrafo-normal">En "Miau, miau, ¿qué hago con mi gatito?" obtendrás toda la información que buscas sobre el mundo de los gatos. Este sitio web está creado para que puedas tener consejos prácticos y útiles sobre diversos aspectos relacionados con los felinos.</p>
+						<p class="parrafo-normal">Si te gusta el tema y quieres saber más información referente a tu felino, te recomiendo visitar los siguientes artículos.</p>
+						<a href="https://gatosforever.com/" style="margin: 20px;">Gatosforever.com</a>
+						<br>
+						<a href="https://www.euroresidentes.com/hogar/mascotas/" style="margin: 20px;">Euroresidentes.com</a>
+				</article>
+			</div>
+		</section>
+
+		<section>
+			<div id="Alimentación">
+				<article>
+					<h2 id="titulo-2-La-alimentación-de-los-gatos">La alimentación de los gatos</h2>
+						<table class="table table-hover" style="width: auto;">
+							<tr style= "text-align: center; background-color: #ff6b9e;">
+								<td class="Tabla-contenido-celda" colspan="2">Contenido</td>
+							</tr>
+							<tr>
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">1</td>
+								<td class="Tabla-contenido-celda"style=" background-color: #ff9fc0;"><a href="#titulo-2-La-alimentación-de-los-gatos">La alimentación de los gatos</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">1.1</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-1-Tipos-de-alimento">Tipos de alimento</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">1.1.1</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-2-Pienso-seco">Pienso seco</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">1.1.2</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-2-Alimento-húmedo">Alimento húmedo</a></td>
+							</tr>
+							<tr style= "text-align: justify; background-color: #ff9fc0;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">1.2</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-1-Cómo_elegir_el_mejor_alimento_para_tu_gato">¿Cómo elegir el mejor alimento para tu gato?</a></td>
+							</tr>
+						</table>
+						<img src="https://static.eldiario.es/clip/a25b8533-2f37-4ec2-bf1c-3c5b5b08fae2_16-9-discover-aspect-ratio_default_0.webp" alt= "Un gatito comiendo" class="imagen">
+						<p class="parrafo-normal">Los gatos son animales carnívoros que necesitan una dieta equilibrada y de buena calidad, adaptada a su edad, tamaño, actividad y estado de salud. En este sitio web te explicaremos cómo elegir el mejor pienso seco y el mejor alimento húmedo para tu gato, teniendo en cuenta sus características y sus necesidades nutricionales.</p>
+
+				  	<h3 id="subtitulo-1-Tipos-de-alimento">Tipos de alimento.</h3>
+				 		<p class="parrafo-normal">Existen dos tipos principales de alimento para gatos: el pienso seco y el alimento húmedo. Ambos tienen sus ventajas e inconvenientes, por lo que lo ideal es combinarlos para ofrecer una dieta variada y completa a tu gato.</p>
+
+				 	<h4 id="subtitulo-2-Pienso-seco">Pienso seco.</h4>
+				  		<p class="parrafo-normal">El pienso seco es el alimento más común y práctico para los gatos. Se trata de croquetas secas que contienen todos los nutrientes que necesita el gato. El pienso seco tiene varias ventajas:</p>
+						  	<ul class="parrafo-normal">
+								<li>Tiene una larga duración y se conserva bien sin necesidad de refrigeración.</li>
+								<li>Es económico y fácil de encontrar en cualquier tienda o supermercado.</li>
+								<li>Ayuda a prevenir la formación de sarro y a mantener una buena salud dental en el gato.</li>
+								<li>Estimula la masticación y la salivación del gato, lo que favorece su digestión.</li>
+						  	</ul>
+				  		<p class="parrafo-normal">Sin embargo, el pienso seco también tiene algunos inconvenientes:</p>
+						  	<ul class="parrafo-normal">
+							    <li>Tiene un bajo contenido en agua, lo que puede provocar deshidratación o problemas urinarios en el gato si no bebe suficiente agua.</li>
+							    <li>Tiene un alto contenido en carbohidratos y cereales, lo que puede causar alergias, intolerancias o sobrepeso en el gato si se le da en exceso.</li>
+							    <li>Tiene un bajo contenido en proteínas y grasas animales, lo que puede afectar a la calidad del pelo y la piel del gato si no se le complementa con otros alimentos.</li>
+						  	</ul>
+
+					<h4 id="subtitulo-2-Alimento-húmedo">Alimento húmedo</h4>
+						<p class="parrafo-normal">El alimento húmedo es el alimento más natural y apetecible para los gatos. Se trata de comida húmeda que suele presentarse en latas, tarrinas o sobres. El alimento húmedo tiene varias ventajas:</p>
+							<ul class="parrafo-normal">
+							    <li>Tiene un alto contenido en agua, lo que aporta hidratación y previene problemas urinarios en el gato.</li>
+							    <li>Tiene un alto contenido en proteínas y grasas animales, lo que satisface las necesidades nutricionales del gato y mejora la calidad de su pelo y su piel.</li>
+							    <li>Tiene un bajo contenido en carbohidratos y cereales, lo que evita alergias, intolerancias o sobrepeso en el gato.</li>
+							    <li>Tiene un sabor y un olor más atractivos para el gato, lo que estimula su apetito y su paladar.</li>
+							</ul>  
+						<p class="parrafo-normal">Sin embargo, el alimento húmedo también tiene algunos inconvenientes:</p>
+					 		<ul class="parrafo-normal">
+							    <li>Tiene una corta duración y se estropea con facilidad si no se refrigera o se consume pronto.</li>
+							    
+							    <li>Es más caro y difícil de encontrar que el pienso seco.</li>
+							    
+							    <li>No ayuda a prevenir el sarro ni a mantener una buena salud dental en el gato.</li>
+							    
+							    <li>Puede provocar diarrea o vómitos en el gato si se le cambia bruscamente de alimento o si se le da una cantidad excesiva.</li>
+					  		</ul>
+
+				  	<h3 id="subtitulo-1-Cómo_elegir_el_mejor_alimento_para_tu_gato">¿Cómo elegir el mejor alimento para tu gato?</h3>
+						<p class="parrafo-normal">A la hora de elegir el mejor alimento para tu gato, debes tener en cuenta varios factores:</p>
+							<ul class="parrafo-normal">
+							    <li> <strong>La edad del gato:</strong> los gatos tienen diferentes necesidades nutricionales según su etapa de vida. Los gatitos necesitan un alimento rico en proteínas, grasas, calcio y fósforo para crecer sanos y fuertes. Los gatos adultos necesitan un alimento equilibrado que les aporte energía y vitalidad. Los gatos mayores necesitan un alimento bajo en calorías, sodio y fósforo para prevenir el sobrepeso, la hipertensión y la insuficiencia renal.</li>
+							    <li> <strong>El tamaño del gato:</strong> los gatos tienen diferentes tamaños según su raza o su genética. Los gatos pequeños necesitan un alimento con croquetas pequeñas que puedan masticar fácilmente. Los gatos grandes necesitan un alimento con croquetas grandes que les obliguen a masticar y les sacien más.</li>
+							    <li> <strong>La actividad del gato:</strong> los gatos tienen diferentes niveles de actividad según su personalidad o su entorno. Los gatos activos necesitan un alimento con más calorías y proteínas que les aporte energía y resistencia. Los gatos sedentarios necesitan un alimento con menos calorías y grasas que les evite el sobrepeso y la obesidad.</li>
+							    <li> <strong>El estado de salud del gato:</strong> los gatos pueden tener diferentes problemas de salud que requieran una dieta especial. Los gatos alérgicos o intolerantes necesitan un alimento hipoalergénico o sin cereales que les evite reacciones adversas. Los gatos con problemas urinarios necesitan un alimento bajo en magnesio y pH ácido que les prevenga la formación de cálculos o cristales. Los gatos con problemas digestivos necesitan un alimento fácil de digerir y con fibra que les regule el tránsito intestinal. Los gatos con problemas renales necesitan un alimento bajo en fósforo y proteínas que les proteja los riñones. Los gatos con problemas hepáticos necesitan un alimento bajo en cobre y grasa que les ayude a depurar el hígado. Los gatos con problemas cardíacos necesitan un alimento bajo en sodio y con taurina que les fortalezca el corazón.</li>
+							</ul>
+						<p class="parrafo-normal">Para elegir el mejor alimento para tu gato, debes leer bien la etiqueta del producto y comprobar su composición, sus ingredientes, sus aditivos, su fecha de caducidad y su modo de conservación. También debes consultar con tu veterinario, que te podrá recomendar el alimento más adecuado para tu gato según sus características y sus necesidades.</p>
+						<p class="parrafo-normal">Para entender mejor la información, te invito a leer la siguiente tabla que resume y resalta las partes importantes de la anterior información</p>
+
+					<div class="container">
+		    			<table class="table table-striped custom-table-striped">
+						  	<thead style= "text-align: center; background-color: #FF9800;">
+							    <td >Tipo de alimento</td>
+							    <td >Ventajas</td>
+							    <td >Inconvenientes</td>
+							    <td >Contenido nutricional</td>
+							    <td >Frecuencia de alimentación</td>
+							    <td >Recomendaciones</td>
+						  	</thead>
+							<tbody>
+								<tr style="text-align: justify;">
+							    	<td>Pienso seco.</td>  
+								    <td>
+								      	<ol>
+									        <li>Larga duración y fácil conservación.</li>
+									        <li>Económico y fácil de encontrar.</li>
+									        <li>Previene el sarro y mejora la salud dental.</li>
+									        <li>Estimula la masticación y la salivación.</li>
+								      	</ol>    	
+								    </td>
+								    <td>
+								      	<ol>
+									        <li>Bajo contenido en agua, puede causar deshidratación o problemas urinarios.</li>
+									        <li>Alto contenido en carbohidratos y cereales, puede causar alergias, intolerancias o sobrepeso.</li>
+									        <li>Bajo contenido en proteínas y grasas animales, puede afectar a la calidad del pelo y la piel.</li>
+								      	</ol>    	
+								    </td>
+								    <td>
+								      	<ol>
+									        <li><strong>Proteínas:</strong> 30-45%</li>
+									        <li><strong>Grasas:</strong>15-25% </li>
+									        <li><strong>Carbohidratos:</strong>20-40%</li>
+									        <li><strong>Agua:</strong>10% o menos</li>
+								      	</ol>  
+								    </td>
+			    					<td >Una o dos veces al día, según el peso y la actividad del gato.</td>
+								    <td>
+								      	<ol>
+									        <li>Adecuado para gatos de todas las edades, siempre que se elija un pienso adaptado a sus necesidades.</li>
+									        <li>Se recomienda combinarlo con alimento húmedo para aportar más hidratación y variedad.</li>
+									        <li>Se debe controlar la cantidad y la calidad del pienso para evitar el sobrepeso o las carencias nutricionales.</li>
+								     	</ol>
+								    </td>      	          
+			  					</tr>
+
+								<tr style="text-align: justify;">
+								  	<td >Alimento húmedo</td>
+								  	<td>
+								      	<ol>
+										    <li>Alto contenido en agua, aporta hidratación y previene problemas urinarios.</li>
+										    <li>Alto contenido en proteínas y grasas animales, satisface las necesidades nutricionales y mejora la calidad del pelo y la piel.</li>
+										    <li>Bajo contenido en carbohidratos y cereales, evita alergias, intolerancias o sobrepeso. </li>
+										     <li>Sabor y olor más atractivos, estimula el apetito y el paladar.</li>
+								      	</ol>    	
+								    </td>	
+									<td>
+									    <ol>
+										    <li>Corta duración y fácil deterioro si no se refrigera o se consume pronto.</li>
+										    <li>Más caro y difícil de encontrar que el pienso seco.</li>
+										    <li>No previene el sarro ni mejora la salud dental.</li>
+										    <li>Puede provocar diarrea o vómitos si se cambia bruscamente de alimento o si se da en exceso.</li>
+									    </ol>     	
+			    					</td>
+									<td>
+									    <ol>
+										    <li><strong>Proteínas:</strong>40-60%</li>
+										    <li><strong>Grasas:</strong>20-40%</li>
+										    <li><strong>Carbohidratos:</strong>10-20%</li>
+										    <li><strong>Agua:</strong>70-80%</li>
+									    </ol>  
+									</td>
+			    					<td>Una o dos veces al día, según el peso y la actividad del gato.</td> 
+									<td>
+									    <ol>
+										    <li>Adecuado para gatos de todas las edades, siempre que se elija un alimento húmedo adaptado a sus necesidades.</li>
+										    <li>Se recomienda combinarlo con pienso seco para prevenir el sarro y mejorar la salud dental.</li>
+										    <li>Se debe controlar la cantidad y la calidad del pienso para evitar trastornos digestivos</li>
+									    </ol> 	
+									</td>
+			    				</tr> 
+		      				</tbody>
+		    			</table>
+		    		</div>
+				</article>
+			</div>
+		</section>
+
+		<section>
+			<div id="Higiene">
+				<article>
+					<h2 id="titulo-2-La-higiene-de-los-gatos">La higiene de los gatos</h2>
+						<table class="table table-hover" style="width:auto;">
+							<tr style= "text-align: center; background-color: #ff6b9e;">
+								<td class="Tabla-contenido-celda" colspan="2">Contenido</td>
+							</tr>
+							<tr style= "text-align: justify; background-color: #ff9fc0;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2</td>
+								<td class="Tabla-contenido-celda"><a href="#titulo-2-La-higiene-de-los-gatos">La higiene de los gatos</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2.1</td>
+								<td class="Tabla-contenido-celda"style=" background-color: #ff9fc0;"><a href="#subtitulo-1-Cepillado-del-pelo">Cepillado del pelo</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2.2</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-1-Baño">Baño</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2.2.1</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-2-Pasos-para-bañar-al-gato">Pasos para bañar al gato</a></td>
+							</tr>
+							<tr style= "text-align: justify; background-color: #ff9fc0;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2.3</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-1-Limpieza-de-los-ojos">Limpieza de los ojos</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2.3.1</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="Productos-para-limpiar-los-ojos">Productos para limpiar los ojos</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">2.3.2</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#Pasos-para-limpiar-los-ojos">Pasos para limpiar los ojos</a></td>
+							</tr>
+						</table>
+						<img src="https://www.purina.es/sites/default/files/2021-12/Cada_cuanto_puedo_ba__ar_a_mi_gato%20%282%29%20%281%29-min.jpg" alt= "Un gatito siendo bañado" class="imagen">
+						<p class="parrafo-normal">Los gatos son animales muy limpios que se acicalan a sí mismos varias veces al día. Sin embargo, esto no significa que no necesiten cuidados higiénicos por parte de sus dueños. En este sitio web te enseñaremos cómo mantener el pelo de tu gato sano y brillante, cómo bañarlo solo cuando sea necesario y con los productos adecuados, cómo limpiar sus ojos, orejas con suavidad y regularidad, sin hacerle daño y cada cierto tiempo.</p>
+
+	  				<h3 id="subtitulo-1-Cepillado-del-pelo">Cepillado del pelo</h3>
+						<p class="parrafo-normal">El cepillado del pelo es uno de los cuidados higiénicos más importantes para los gatos. El cepillado ayuda a eliminar el pelo muerto, los nudos, la suciedad y los parásitos externos que pueda tener el gato. También favorece la circulación sanguínea y el vínculo entre el gato y su dueño.</p>
+					  	<p class="parrafo-normal">La frecuencia y la duración del cepillado dependen del tipo de pelo del gato. Los gatos de pelo corto necesitan un cepillado semanal o quincenal, mientras que los gatos de pelo largo o medio necesitan un cepillado diario o cada dos días. El cepillado debe ser suave y paciente, siguiendo el sentido del pelo y evitando tirar o raspar la piel del gato.</p>
+					 	<p class="parrafo-normal">Para cepillar el pelo del gato se debe usar un cepillo adecuado al tipo de pelo. Los cepillos más comunes son:</p>
+							<ul class="parrafo-normal">
+							    <li><strong>El cepillo de cerdas:</strong> es un cepillo con cerdas naturales o sintéticas que sirve para eliminar el polvo y dar brillo al pelo. Se puede usar en cualquier tipo de pelo, pero es especialmente recomendable para los gatos de pelo corto y liso.</li>
+							    
+							    <li><strong>El cepillo de púas:</strong> es un cepillo con púas metálicas o plásticas que sirve para desenredar el pelo y eliminar los nudos. Se puede usar en cualquier tipo de pelo, pero es especialmente recomendable para los gatos de pelo largo o rizado.</li>
+							    
+							    <li><strong>El peine:</strong> es un instrumento con dientes finos o gruesos que sirve para peinar el pelo y eliminar los parásitos externos como las pulgas o las liendres. Se puede usar en cualquier tipo de pelo, pero es especialmente recomendable para los gatos de pelo fino o sedoso.</li>
+							    
+							    <li><strong>El guante:</strong> es un accesorio con forma de guante que tiene pequeñas púas o cerdas en la palma que sirve para acariciar al gato y eliminar el pelo suelto. Se puede usar en cualquier tipo de pelo, pero es especialmente recomendable para los gatos que no toleran bien el cepillado.</li>
+							</ul>
+
+	  				<h3 id="subtitulo-1-Baño">Baño</h3>
+					  	<p class="parrafo-normal">El baño es otro cuidado higiénico que puede beneficiar a los gatos. El baño ayuda a limpiar el pelo y la piel del gato, eliminando la grasa, la suciedad y los malos olores. También ayuda a prevenir las infecciones cutáneas y a mejorar el aspecto del gato.</p>
+						<p class="parrafo-normal">Sin embargo, el baño no es imprescindible para los gatos, ya que ellos mismos se limpian con su lengua. Además, el baño puede resultar estresante o traumático para algunos gatos, que no toleran bien el agua ni los jabones. Por eso, solo se debe bañar al gato cuando sea necesario, por ejemplo si se ha ensuciado mucho o si tiene algún problema dermatológico.</p>
+
+	   				<h4 id="subtitulo-2-Pasos-para-bañar-al-gato">Pasos para bañar al gato</h4>
+						<p class="parrafo-normal">Para bañar al gato se debe seguir una serie de pasos:</p>
+							<ol class="parrafo-normal">
+							    <li>Elegir un lugar adecuado para el baño, como el lavabo, la bañera o el bidé. El lugar debe ser amplio, cómodo y seguro, con una superficie antideslizante y sin objetos que puedan caerse o romperse.</li>
+							    
+							    <li>Preparar el material necesario para el baño, como un champú específico para gatos, una esponja, una toalla, un secador y un cepillo. El champú debe ser de buena calidad y adecuado al tipo de pelo y de piel del gato. La esponja debe ser suave y húmeda. La toalla debe ser grande y absorbente. El secador debe tener una temperatura y una potencia moderadas. El cepillo debe ser el mismo que se usa para el cepillado habitual.</li>
+							    
+							    <li>Acostumbrar al gato al baño, sobre todo si es la primera vez que se le baña o si tiene miedo al agua. Se puede empezar por mojarle las patas o el lomo con la esponja y acariciarle con la toalla, sin usar el champú ni el secador. Se debe hablarle con voz suave y dulce y premiarle con comida o caricias cuando se porte bien. Se debe repetir este proceso varias veces hasta que el gato se sienta cómodo y confiado.</li>
+							    
+							    <li>Bañar al gato con cuidado y paciencia, evitando que se asuste o se escape. Se debe mojar al gato con la esponja o con la ducha, empezando por el cuello y terminando por la cola, sin mojarle la cabeza ni los oídos. Se debe aplicar el champú con la esponja o con las manos, masajeando suavemente todo el cuerpo del gato, sin frotar ni rascar. Se debe aclarar bien el champú con la esponja o con la ducha, asegurándose de que no queden restos en el pelo ni en la piel del gato. Se debe envolver al gato con la toalla y secarlo bien con el secador o al aire libre, sin acercarle demasiado el calor ni el ruido. Se debe cepillar al gato con el cepillo para desenredar su pelo y darle brillo.</li>
+							    
+							    <li>Felicitar al gato y darle un premio después del baño, para que asocie el baño con algo positivo y no con algo negativo. Se debe hablarle con voz suave y dulce y darle comida o caricias cuando termine el baño. También se puede jugar con él o dejarlo tranquilo según su preferencia.</li>
+						  	</ol>
+
+				  	<h3 id="subtitulo-1-Limpieza-de-los-ojos">Limpieza de los ojos</h3>
+						<p class="parrafo-normal">La limpieza de los ojos es otro cuidado higiénico que puede beneficiar a los gatos. La limpieza de los ojos ayuda a eliminar las legañas o las secreciones que puedan tener los gatos en los ojos, evitando que se irriten o se infecten. También ayuda a prevenir las enfermedades oculares y a mejorar la visión del gato.</p>
+						<p class="parrafo-normal">La frecuencia de la limpieza de los ojos depende del tipo de ojos del gato. Los gatos de ojos grandes, saltones o claros suelen tener más legañas o secreciones que los gatos de ojos pequeños, hundidos u oscuros. La limpieza de los ojos debe ser diaria o semanal, según la cantidad y la calidad de las legañas o las secreciones.</p>
+
+	   				<h4 id="subtitulo-2-Productos-para-limpiar-los-ojos">Productos para limpiar los ojos</h4>
+
+						<p class="parrafo-normal">Para limpiar los ojos del gato se debe usar un producto adecuado para los ojos. Los productos más comunes son:</p>
+						  	<ul class="parrafo-normal">
+							    <li>El agua: es el producto más natural y económico para limpiar los ojos del gato. El agua debe estar limpia y templada, para no dañar ni enfriar los ojos del gato.</li>
+							    <li>El suero fisiológico: es un producto más específico y eficaz para limpiar los ojos del gato. El suero fisiológico tiene una composición similar a la de las lágrimas del gato, por lo que no le irrita ni le escuece los ojos.</li>
+							    <li>El colirio: es un producto más especializado y potente para limpiar los ojos del gato. El colirio tiene una composición química que puede tener propiedades antisépticas, antiinflamatorias, antialérgicas o lubricantes, según el tipo de colirio. El colirio solo se debe usar bajo prescripción veterinaria, ya que puede tener efectos secundarios o contraindicaciones.</li>
+						  	</ul>
+
+	   				<h4 id="subtitulo-2-Pasos-para-limpiar-los-ojos">Pasos para limpiar los ojos</h4>
+	  					<p class="parrafo-normal">Para limpiar los ojos del gato se debe seguir una serie de pasos:</p>
+							<ol class="parrafo-normal">
+							    <li>Elegir un lugar adecuado para la limpieza, donde el gato esté tranquilo y relajado. Se puede aprovechar un momento en que el gato esté dormido o acurrucado, para que no se resista ni se asuste.</li>
+							    
+							    <li>Preparar el material necesario para la limpieza, como una gasa o un algodón estéril, un producto adecuado para los ojos y unas tijeras. La gasa o el algodón debe estar humedecido con el producto elegido, ya sea agua, suero fisiológico o colirio. Las tijeras deben estar limpias y afiladas, para cortar el pelo que pueda molestar al gato en los ojos.</li>
+							    
+							    <li>Acostumbrar al gato a la limpieza, sobre todo si es la primera vez que se le limpia los ojos o si tiene miedo al contacto. Se puede empezar por acariciarle la cabeza y el cuello, y luego pasarle suavemente la gasa o el algodón por los ojos, sin presionar ni frotar. Se debe hablarle con voz suave y dulce y premiarle con comida o caricias cuando se porte bien. Se debe repetir este proceso varias veces hasta que el gato se sienta cómodo y confiado.</li>
+							    
+							    <li>Limpiar los ojos del gato con cuidado y paciencia, evitando que se irrite o se lastime. Se debe sujetar al gato con una mano y con la otra pasarle la gasa o el algodón por los ojos, desde el lagrimal hasta el ángulo externo, siguiendo el sentido de las pestañas. Se debe usar una gasa o un algodón diferente para cada ojo, para evitar contagiar posibles infecciones. Se debe retirar las legañas o las secreciones que pueda tener el gato en los ojos, sin tirar ni rascar. Se debe cortar el pelo que pueda entorpecer la visión del gato o provocarle irritación en los ojos, con cuidado de no cortarle las pestañas ni las cejas.</li>
+							    
+							    <li>Felicitar al gato y darle un premio después de la limpieza, para que asocie la limpieza con algo positivo y no con algo negativo. Se debe hablarle con voz suave y dulce y darle comida o caricias cuando termine la limpieza. También se puede jugar con él o dejarlo tranquilo según su preferencia.</li>
+							</ol>
+						<p class="parrafo-normal">Para entender mejor la información, te invito a leer la siguiente tabla que resume y resalta las partes importantes de la anterior información</p>
+
+					<div class="container">
+	    				<table class="table table-striped custom-table-striped">
+		  					<thead style= "text-align: center; background-color: #FF9800;">
+								<td>Tipo de cuidado</td>
+								<td>Beneficios</td>
+								<td>Frecuencia</td>
+								<td>Productos o accesorios</td>
+							</thead>
+							<tbody>
+								<tr style="text-align: justify;">
+									<td>Cepillado del pelo</td>
+									<td>
+										<ol>
+											<li>Elimina el pelo muerto, los nudos, la suciedad y los parásitos externos.</li>
+											<li>Favorece la circulación sanguínea y el vínculo con el dueño.</li>
+										</ol>
+									</td>
+									<td>Depende del tipo de pelo del gato.</td>
+									<td>
+										<ol>
+											<li>Cepillo de cerdas</li>
+											<li>Cepillo de púas</li>
+											<li>Peine</li>
+											<li>Guante</li>
+										</ol>
+									</td>
+								</tr>
+								<tr style="text-align: justify;">
+									<td>Baño</td>
+									<td>
+										<ol>
+											<li>Limpia el pelo y la piel del gato, eliminando la grasa, la suciedad y los malos olores.</li>
+											<li>Previene las infecciones cutáneas y mejora el aspecto del gato.</li>
+										</ol>
+									</td>
+									<td>Solo cuando sea necesario, por ejemplo si se ha ensuciado mucho o si tiene algún problema dermatológico.</td>
+									<td>
+										<ol>
+											<li>Champú específico para gatos, suave y sin perfume.</li>
+											<li>Toalla suave y seca.</li>
+											<li>Secador de pelo a temperatura baja y a distancia, si el gato lo tolera.</li>
+										</ol>
+									</td>
+								</tr>
+								<tr style="text-align: justify;">
+									<td>Limpieza de los ojos</td>
+									<td>
+										<ol>
+											<li>Elimina las legañas o las secreciones que puedan tener los gatos en los ojos.</li>
+											<li>PPreviene las enfermedades oculares y mejora la visión del gato.</li>
+										</ol>			
+									</td>
+									<td>Depende del tipo de ojos del gato</td>
+									<td>
+										<ol>
+											<li>Gasas estériles y suaves.</li>
+											<li>Suero fisiológico o agua hervida templada.</li>
+											<li>Colirio específico para gatos (si lo recomienda el veterinario).</li>
+										</ol>
+							    	</td>
+		    					</tr> 
+		      				</tbody>
+		    			</table>
+		    		</div>
+				</article>
+			</div>
+		</section>
+
+		<section>
+			<div id="Psicología">
+				<article>
+					<h2 id="titulo-2-La-psicología-de-los-gatos">La psicología de los gatos</h2>
+						<table class="table table-hover" style="width:auto;">
+							<tr style= "text-align: center; background-color: #ff6b9e;">
+								<td class="Tabla-contenido-celda" colspan="2">Contenido</td>
+							</tr>
+							<tr style= "text-align: justify; background-color: #ff9fc0;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">3</td>
+								<td class="Tabla-contenido-celda"><a href="#titulo-2-La-psicología-de-los-gatos">La psicología de los gatos</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">3.1</td>
+								<td class="Tabla-contenido-celda"style=" background-color: #ff9fc0;"><a href="#subtitulo-1-Comportamiento">Comportamiento</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">3.2</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-1-Emociones">Emociones</a></td>
+							</tr>
+							<tr style= "text-align: justify;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">3.2.1</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-2-Ejemplos-de-emociones">Ejemplos de emociones</a></td>
+							</tr>
+							<tr style= "text-align: justify; background-color: #ff9fc0;">
+								<td class="Tabla-contenido-celda" style="background-color: #ff78a6;">3.3</td>
+								<td class="Tabla-contenido-celda" style="background-color: #ff9fc0"><a href="#subtitulo-2-Los-cinco-tipos-de-personalidad">Los cinco yipos de personalidad de los gatos</a></td>
+							</tr>
+						</table>
+						<img src="https://blog.veterinariadelbosque.com/wp-content/uploads/2022/07/gato-curioso.jpg" alt= "Un gatito siendo curioso" class="imagen">
+						<p class="parrafo-normal">Los gatos son animales inteligentes, curiosos y sensibles que necesitan estimular su mente y sus sentidos para ser felices. En este sitio web te mostraremos cómo comprender mejor a tu gato, cómo interpretar sus gestos, sus maullidos y su lenguaje corporal, cómo educarlo con refuerzo positivo para que aprenda órdenes básicas y buenos hábitos, cómo enriquecer su ambiente con elementos que le permitan explorar y descansar, cómo ofrecerle juguetes que le entretengan y le diviertan y cómo darle cariño y atención respetando sus tiempos y sus preferencias.</p>
+						<p class="parrafo-normal">La psicología de los gatos es otro aspecto importante que debes conocer y cuidar si tienes un gato. Los gatos son animales inteligentes, curiosos y sensibles que necesitan estimular su mente y sus sentidos para ser felices. La psicología de los gatos influye en su comportamiento, sus emociones y su relación con las personas y con otros animales. Por eso, es importante entender a tu gato, educarlo con refuerzo positivo, enriquecer su ambiente y darle cariño y atención.</p>
+
+					<h3 id="subtitulo-1-Comportamiento">Comportamiento</h3>
+						<p class="parrafo-normal">El comportamiento de los gatos es el resultado de su instinto, su aprendizaje y su personalidad. Los gatos tienen comportamientos propios de su especie, como cazar, jugar, marcar, ronronear o maullar. Estos comportamientos les ayudan a sobrevivir, a comunicarse y a expresarse. Sin embargo, los gatos también tienen comportamientos individuales, que dependen de su carácter, su experiencia y su entorno. Estos comportamientos pueden ser positivos o negativos, según cómo afecten al bienestar del gato y al de las personas que conviven con él.</p>
+						<p class="parrafo-normal">Para entender el comportamiento de tu gato, debes observarlo con atención y tratar de interpretar sus señales de comunicación. Los gatos se comunican principalmente a través de su lenguaje corporal, que incluye sus gestos, sus posturas, sus movimientos y sus expresiones faciales. También se comunican a través de su lenguaje vocal, que incluye sus maullidos, sus ronroneos, sus bufidos y sus gruñidos. Además, se comunican a través de su lenguaje olfativo, que incluye sus marcas con orina, heces o feromonas.</p>
+						<p class="parrafo-normal">Algunos ejemplos de comportamientos comunes en los gatos son:</p>
+							<ul class="parrafo-normal">
+							    <li><strong>Cazar:</strong> es un comportamiento instintivo que les permite obtener alimento y satisfacer su curiosidad. Los gatos cazan tanto presas reales como objetos que se mueven o hacen ruido, como ratones, pájaros, insectos, juguetes o pelotas. Los gatos pueden cazar solos o en grupo, según su preferencia. Los gatos pueden matar o no a sus presas, según su hambre o su interés. Los gatos pueden traer o no sus presas a casa, según su confianza o su orgullo.</li>
+							    <li><strong>Jugar:</strong> es un comportamiento instintivo que les permite ejercitar su cuerpo y su mente y liberar estrés. Los gatos juegan tanto con objetos como con otros animales o personas, simulando situaciones de caza o de lucha. Los gatos pueden jugar solos o en grupo, según su ánimo o su sociabilidad. Los gatos pueden jugar con cualquier cosa que les llame la atención o que les divierta, como pelotas, ratones, plumas, cañas, láseres, etc.</li>
+							    <li><strong>Marcar:</strong> es un comportamiento instintivo que les permite delimitar su territorio y transmitir información sobre sí mismos. Los gatos marcan tanto con orina como con heces o con feromonas. Los gatos pueden marcar tanto dentro como fuera de casa, según su necesidad o su oportunidad. Los gatos pueden marcar en lugares visibles u ocultos, según su intención o su seguridad.</li>
+							    <li><strong>Ronronear:</strong> es un comportamiento vocal que les permite expresar diferentes emociones o estados de ánimo. Los gatos ronronean tanto cuando están contentos como cuando están nerviosos o cuando tienen dolor. Los gatos pueden ronronear tanto para sí mismos como para otros animales o personas, según su deseo o su expectativa.</li>
+							    <li><strong>Maullar:</strong> es un comportamiento vocal que les permite comunicarse con diferentes fines o propósitos. Los gatos maullan tanto para pedir algo como para protestar o para saludar. Los gatos pueden maullar tanto a otros animales como a personas, según su necesidad o su interés.</li>
+							</ul>  
+
+					<h3 id="subtitulo-1-Emociones">Emociones</h3>
+						<p class="parrafo-normal">Las emociones de los gatos son las reacciones afectivas que experimentan ante diferentes estímulos o situaciones. Los gatos tienen emociones básicas como el miedo, la alegría, la tristeza o la ira. Estas emociones les ayudan a adaptarse al medio y a relacionarse con otros seres vivos. Sin embargo, los gatos también tienen emociones complejas como el amor, la vergüenza o el celo. Estas emociones les hacen tener sentimientos más profundos y variados, que pueden influir en su comportamiento y en su bienestar.</p>
+						<p class="parrafo-normal">Para entender las emociones de tu gato, debes observarlo con atención y tratar de interpretar sus señales de comunicación. Los gatos expresan sus emociones principalmente a través de su lenguaje corporal, que incluye sus gestos, sus posturas, sus movimientos y sus expresiones faciales. También expresan sus emociones a través de su lenguaje vocal, que incluye sus maullidos, sus ronroneos, sus bufidos y sus gruñidos. Además, expresan sus emociones a través de su lenguaje olfativo, que incluye sus marcas con orina, heces o feromonas.</p>
+
+	   				<h4 id="subtitulo-2-Ejemplos-de-emociones">Ejemplos de emociones</h4>
+	  					<p class="parrafo-normal">Algunos ejemplos de emociones comunes en los gatos son:</p>
+						    <ul class="parrafo-normal">
+							    <li>El miedo: es una emoción negativa que surge ante una amenaza real o imaginaria. El miedo provoca en el gato una reacción de huida o de defensa, para protegerse del peligro. El miedo se manifiesta en el gato con signos como: orejas hacia atrás o hacia los lados, pupilas dilatadas, pelo erizado, cola entre las patas, cuerpo encogido o arqueado, boca cerrada o abierta con los dientes al descubierto, uñas afuera, maullidos agudos o silenciosos, bufidos o gruñidos.</li>
+							    <li>La alegría: es una emoción positiva que surge ante una situación placentera o satisfactoria. La alegría provoca en el gato una reacción de acercamiento o de juego, para disfrutar del momento. La alegría se manifiesta en el gato con signos como: orejas hacia adelante o hacia arriba, pupilas normales o contraídas, pelo liso, cola levantada o curvada, cuerpo relajado o estirado, boca cerrada o abierta con la lengua fuera, ronroneos o maullidos graves o melódicos.</li>
+							    <li>La tristeza: es una emoción negativa que surge ante una pérdida o una decepción. La tristeza provoca en el gato una reacción de aislamiento o de apatía, para recuperarse del dolor. La tristeza se manifiesta en el gato con signos como: orejas hacia abajo o hacia los lados, pupilas normales o dilatadas, pelo liso o sucio, cola baja o arrastrada, cuerpo encogido o acurrucado, boca cerrada o abierta con los dientes al descubierto, maullidos agudos o silenciosos, llantos o gemidos.</li>
+							    <li>La ira: es una emoción negativa que surge ante una ofensa o una frustración. La ira provoca en el gato una reacción de ataque o de agresión, para imponerse al adversario. La ira se manifiesta en el gato con signos como: orejas hacia atrás o hacia los lados, pupilas dilatadas, pelo erizado, cola rígida o hinchada, cuerpo tenso o arqueado, boca abierta con los dientes al descubierto y las comisuras hacia atrás, uñas afuera, maullidos agudos o silenciosos</li>  
+						    </ul>  
+
+	   				<h3 id="subtitulo-1-Tipos-de-personalidad-de-los-gatos">Tipos de personalidad de los gatos</h3>
+						<p class="parrafo-normal">Los gatos son animales fascinantes que tienen diferentes tipos de personalidad, que definen su forma de ser y de actuar. Los tipos de personalidad de los gatos se pueden clasificar según el modelo de los cinco factores: neuroticismo, extraversión, apertura, amabilidad y responsabilidad. Estos factores describen las tendencias generales de los gatos a reaccionar de cierta manera ante diferentes situaciones o estímulos. Cada gato tiene una combinación única de estos factores, que determina su tipo de personalidad.</p>
+
+					<h4 id="subtitulo-2-Los-cinco-tipos-de-personalidad">Los cinco tipos de personalidad</h4>
+						<p class="parrafo-normal">Los cinco tipos de personalidad de los gatos son:</p>
+							<ul class="parrafo-normal">
+							    <li><strong>El gato nervioso:</strong> es un gato con alto neuroticismo y baja extraversión, apertura, amabilidad y responsabilidad. Es un gato que se estresa fácilmente y se adapta peor a los cambios. Es un gato que se asusta con facilidad y que puede ser agresivo si se siente amenazado. Es un gato que prefiere la soledad y la independencia, que no le gusta explorar ni aprender cosas nuevas, que no es muy cariñoso ni cooperativo, y que no sigue las normas ni las órdenes.</li>
+							    <li><strong>El gato sociable:</strong> es un gato con alta extraversión y baja neuroticismo, apertura, amabilidad y responsabilidad. Es un gato que se relaja fácilmente y se adapta mejor a los cambios. Es un gato que busca la compañía y la atención de otros animales o personas. Es un gato que le gusta explorar y aprender cosas nuevas, pero que no es muy creativo ni innovador. Es un gato que es cariñoso y cooperativo, pero que puede ser competitivo o celoso. Es un gato que no sigue las normas ni las órdenes, sino que hace lo que quiere.</li>	    
+							    <li><strong>El gato curioso:</strong> es un gato con alta apertura y baja neuroticismo, extraversión, amabilidad y responsabilidad. Es un gato que se relaja fácilmente y se adapta mejor a los cambios. Es un gato que explora su entorno y aprende cosas nuevas. Es un gato que es creativo e innovador, pero que puede ser aburrido o raro. Es un gato que no es muy cariñoso ni cooperativo, sino que es distante e independiente. Es un gato que no sigue las normas ni las órdenes, sino que usa su inteligencia y su imaginación.</li>
+							    <li><strong>El gato amable:</strong> es un gato con alta amabilidad y baja neuroticismo, extraversión, apertura y responsabilidad. Es un gato que se relaja fácilmente y se adapta mejor a los cambios. Es un gato que muestra su cariño y su lealtad a sus dueños o amigos. Es un gato que no le gusta explorar ni aprender cosas nuevas, sino que se conforma con lo que tiene. Es un gato que es afectuoso y cooperativo, pero que puede ser sumiso o dependiente. Es un gato que sigue las normas y las órdenes, pero que puede ser desorganizado o indisciplinado.</li>
+							    <li><strong>El gato responsable:</strong> es un gato con alta responsabilidad y baja neuroticismo, extraversión, apertura y amabilidad. Es un gato que se estresa fácilmente y se adapta peor a los cambios. Es un gato que sigue las normas y las órdenes de sus dueños o líderes. Es un gato que no le gusta explorar ni aprender cosas nuevas, sino que repite lo que ya sabe. Es un gato que no es muy cariñoso ni cooperativo, sino que es distante y desconfiado. Es un gato que es organizado, disciplinado y obediente, pero que puede ser aburrido o rígido.</li>
+							</ul>
+						<p class="parrafo-normal">Para entender mejor la información, te invito a leer la siguiente tabla que resume y resalta las partes importantes de la anterior información</p>
+
+					<div class="container">
+	    				<table class="table table-striped custom-table-striped">
+		  					<thead style= "text-align: center; background-color: #FF9800;">
+								<td>Tipo de personalidad</td>
+								<td>Neuroticismo</td>
+								<td>Extraversión</td>
+								<td>Apertura</td>
+								<td>Amabilidad</td>
+								<td>Responsabilidad</td>
+							</thead>
+							<tbody>
+								<tr style= "text-align: justify;">
+									<td>El gato nervioso</td>
+									<td>Alto</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+								</tr>
+								<tr style= "text-align: justify;">
+									<td>El gato sociable</td>
+									<td>Bajo</td>
+									<td>Alto</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+								</tr>
+								<tr style= "text-align: justify;">
+									<td>El gato curioso</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Alto</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+								</tr>
+								<tr style= "text-align: justify;">
+									<td>El gato responsable</td>
+									<td>Alto</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td> Alto</td>
+								</tr>
+								<tr style= "text-align: justify;">
+									<td>El gato amable</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Bajo</td>
+									<td>Alto</td>
+									<td>Bajo</td>
+								</tr> 
+		      				</tbody>
+		    			</table>
+		    		</div>
+				</article>
+			</div>
+		</section>
+
+		<section>
+			<div id="Autor">
+				<aside>
+					<h1 id="titulo-1-Autor">Autor</h1>
+					    <p class="parrafo-normal">Esta página web fue creada por <strong>Ana María Vargas Mejía</strong>, una estudiante de décimo grado de la Institución Educativa Skolmi S.A.</p>
+					    <img src= "C:\Users\Ana Maria\OneDrive\Escritorio\Actividades Tecnologia\Img\Foto Ana María.jpeg" id="imagen-autor">
+				        <p class="parrafo-normal">Puedes contactarme por:</p>
+							<ul class="parrafo-normal">
+						        <li>Correo electrónico: <a href="mailto:vargas.anamaria1215@gmail.com">vargas.anamaria1215@gmail.com</a> </li>
+						        <li>Telefono: 3136054315</li>
+						    </ul>
+				</aside>
+			</div>
+		</section>
+
+		<footer id="pie-pagina"> Todos los derechos reservados © 2023 Ana María Vargas Mejía. </footer>
+
+		<!-- JavaScript para ocultar el mensaje de carga después de un tiempo -->
+	    <script>
+	        document.addEventListener("DOMContentLoaded", function() {
+	            // Simulamos un retraso de 3 segundos (3000 milisegundos)
+	            setTimeout(function() {
+	                // Ocultamos el mensaje de carga
+	                document.getElementById("loader").style.display = "none";
+	                // Mostramos el contenido de la página
+	                document.getElementById("content").style.display = "block";
+	            }, 3000); // Cambia 3000 a la cantidad de tiempo en milisegundos que desees
+	        });
+	    </script>
+	    <script>
+		    // Función para mostrar una sección y ocultar las demás
+		    function mostrar(seccion) {
+		      var secciones = document.querySelectorAll("#inicio, #Alimentación, #Higiene, #Psicología, #Autor");
+		      // Recorrer las secciones
+		      for (var i = 0; i < secciones.length; i++) {
+		        // Si la sección coincide con el parámetro, mostrarla
+		        if (secciones[i].id == seccion) {
+		          secciones[i].style.display = "block";
+		        }
+		        // Si no, ocultarla
+		        else {
+		          secciones[i].style.display = "none";
+		        }
+		      }
+		    }
+		    // Mostrar la sección de inicio por defecto al cargar la página
+		    window.onload = function() {
+		      mostrar("inicio");
+		    }
+	 	</script>
+	</body>
+</html>
